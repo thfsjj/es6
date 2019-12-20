@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+  .cube{
+    position:relative;
+    font-size:80px;
+    width:2em;
+    margin:1.5em auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transform: rotateX(-30deg) rotateY(-30deg);
+    transform:rotateX(-30deg) rotateY(-30deg);
+  }
+  .cube>div{
+    position:absolute;
+    width:2em;
+    height:2em;
+    background:rgba(0, 0, 0, .1);
+    border:1px solid #999;
+    color:white;
+    text-align:center;
+    line-height:2em;
+    
+  }
+  .front{
+    -webkit-transform: translateZ(1em);
+    transform:translateZ(1em);
+  }
+  .back{
+    -webkit-transform: translateZ(1em);
+    transform:rotateY(-180deg) translateZ(1em);
+  }
+  .right{
+    -webkit-transform: rotateY(90deg) translateZ(1em);
+    transform: rotateY(90deg) translateZ(1em);
+  }
+  .left{
+    -webkit-transform: rotateY(-90deg) translateZ(1em);
+    transform: rotateY(-90deg) translateZ(1em);
+  }
+  .top{
+    -webkit-transform: rotateX(90deg) translateZ(1em);
+    transform: rotateX(90deg) translateZ(1em);
+  }
+  .bottom{
+    -webkit-transform: rotateX(-90deg) translateZ(1em);
+    transform: rotateX(-90deg) translateZ(1em);
+  }
+  </style>
+
+</head>
+
+<body>
+    <div class="cube">
+        <div class="front">1</div>
+        <div class="back">2</div>
+        <div class="right">3</div>
+        <div class="left">4</div>
+        <div class="top">5</div>
+        <div class="bottom">6</div>
+    </div>
+
+  <script>
+    // const promise=new Promise((resolve,reject)=>{
+    //     setTimeout(function(){
+    //         resolve('执行成功了');
+    //     },2000)
+    // });
+    // promise.then(function resolve(res){
+    //     console.log(res);
+
+    // });
+    // console.log(promise)
+
+    // let promise = new Promise(function(resolve,reject){
+    //     console.log('我刚创建');
+    //     resolve();
+    // });
+
+    // promise.then(function(){
+    //     console.log('执行成功回调');
+    // });
+    // console.log('执行全局输出');
+    // function loadImageAsync(url) {
+    //     return new Promise(function (resolve, reject) {
+    //         //动态创建一个image元素，给这个元素的url动态赋值最后再添加到页面上
+    //         let div1 = document.getElementsByTagName('div')[0];
+    //         const image = new Image();
+    //         image.onload = function () {
+    //             resolve(image);
+    //         };
+    //         image.onerror = function () {
+    //             reject(new Error('Could not load image at ' + url));
+    //         };
+    //         image.src = url;
+    //         div1.appendChild(image);
+    //     });
+    // }
+    // loadImageAsync('https://via.placeholder.com/600/d32776').then((res) => {
+    //     console.log(res);
+    // });
+  </script>
+</body>
+
+</html>
